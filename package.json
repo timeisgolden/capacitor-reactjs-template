@@ -2,10 +2,27 @@
   "name": "capacitor-reactjs-template",
   "private": true,
   "version": "0.0.0",
+  "prettier": "@ionic/prettier-config",
+  "eslintConfig": {
+    "extends": "@ionic/eslint-config/recommended"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,scss,json,md}": "npm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
+    "prettier": "prettier \"**/*.ts\"",
+    "eslint": "eslint . --ext .ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@capacitor/android": "^3.4.3",
@@ -21,10 +38,14 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^3.4.3",
+    "@ionic/eslint-config": "^0.3.0",
+    "@ionic/prettier-config": "^2.0.0",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^1.0.7",
+    "eslint": "^7.32.0",
+    "husky": "^8.0.1",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }
