@@ -1,5 +1,5 @@
-import React from "react";
-import "./ExploreContainer.css";
+import React from 'react';
+import './ExploreContainer.css';
 
 interface ContainerProps {
   name: string;
@@ -7,15 +7,11 @@ interface ContainerProps {
 
 const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
   return (
-    <div className="container">
+    <div className="container text-red-600">
       <strong>{name}</strong>
       <p>
-        Explore{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://ionicframework.com/docs/components"
-        >
+        Explore{' '}
+        <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">
           UI Components
         </a>
       </p>
