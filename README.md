@@ -35,6 +35,16 @@ const config: CapacitorConfig = {
   }
 };
 ```
+**Then modify `vite.config.ts`** using the address the server is running on from the command above
+```
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: '192.168.0.156',
+    port: 8100
+  }
+});
+```
 **And finally deploy your app to the device**
 ```
 devteam@DevTeams-iMac capacitor-reactjs-template % npx cap copy ios
@@ -47,4 +57,4 @@ devteam@DevTeams-iMac capacitor-reactjs-template % npx cap open ios
 Now your mobile app is pointing to the local server running and you basically have live-reload working. I am certain there is another approach, but like I said I don't use it often enough. Hopefully, this gets you moving
 
 **REMEMBER**
-remove the edit to the `capacitor.config.ts` before deploying to production otherwise the app will be looking for the local server to run the app !!
+remove the edit to the `capacitor.config.ts` and `vite.config.ts` before deploying to production otherwise the app will be looking for the local server to run the app !!
