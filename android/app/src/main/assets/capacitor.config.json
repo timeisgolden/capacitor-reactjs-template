@@ -1,6 +1,6 @@
 {
-	"appId": "com.example.app",
-	"appName": "capacitor-reactjs-template",
+	"appId": "au.com.courageouskids.app.buy",
+	"appName": "my-react-app",
 	"webDir": "dist",
 	"bundledWebRuntime": false
 }
