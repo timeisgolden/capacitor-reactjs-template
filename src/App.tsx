@@ -1,4 +1,5 @@
 import { IonApp, setupIonicReact } from "@ionic/react";
+import Tabs from "./pages/tabs/Tabs";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -18,7 +19,6 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import Tabs from "./pages/tabs/Tabs";
 
 setupIonicReact();
 

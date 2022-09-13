@@ -2,7 +2,7 @@
 	"appId": "au.com.courageouskids.app.buy",
 	"appName": "my-react-app",
 	"webDir": "dist",
-	"bundledWebRuntime": false,
+	"bundledWebRuntime": true,
 	"server": {
 		"url": "http://192.168.0.156:8100"
 	}
