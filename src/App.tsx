@@ -1,4 +1,4 @@
-import { IonApp, setupIonicReact } from "@ionic/react";
+import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import Tabs from "./pages/tabs/Tabs";
 
 /* Core CSS required for Ionic components to work properly */
@@ -19,13 +19,31 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import { IonReactRouter } from "@ionic/react-router";
+import { Route, Redirect } from "react-router";
+import DashboardPage from "./pages/DashboardPage";
+import DashboardDetail from "./pages/DashboardDetail";
 
-setupIonicReact();
+setupIonicReact({
+  mode: "ios",
+  backButtonText: "Previous",
+});
+
+// iOS only
+window.addEventListener("statusTap", function () {
+  console.log("Debug Statusbar tapped.");
+});
 
 const App: React.FC = () => (
   <IonApp>
-    <Tabs />
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="/app" component={Tabs} />
+        <Route path="/dashboard" component={DashboardPage} />
+        <Route path="/detailsonly" component={DashboardDetail} />
+        <Redirect exact from="/" to="/app" />
+      </IonRouterOutlet>
+    </IonReactRouter>
   </IonApp>
 );
-
 export default App;
